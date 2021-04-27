@@ -3,9 +3,9 @@
  */
 //此处填写京东账号cookie。
 let CookieJDs = [
-  'pt_key=AAJgLdehADCqDg3eGPIdEZvlrjaYKGPl_UOX3XyL9x27aNc0_BF90MI9oYOVYFvQbinMKk94PXE;pt_pin=m18701597675;',//账号一ck,例:pt_key=XXX;pt_pin=XXX;
-  'pt_key=AAJgLdclADD5pY-rkAPy-sH1oTLg9yn99353SxHdMCPEISCaLsci1t7QqDBkN-TpfnZvKXU1ZcE;pt_pin=jd_CxUxTgtCyKEc;',//账号二ck,例:pt_key=XXX;pt_pin=XXX;如有更多,依次类推
-  'pt_key=AAJgLdhNADCUMkEr69hAAZV1Q8F2UTL36bCy48KTxEILqzx2HvVXJS3j06I1VQG1pzX6_HaI5jM;pt_pin=18612248185_p;',
+  "pt_key=AAJgfk06ADBHuE4M5AXIrTH2baMyAo9lFJQY-KTKoFuYwhQ7wz_d_jXahfWS-HJepPXgrXDBfIk;pt_pin=m18701597675;",
+  "pt_key=AAJgfk1mADBk83C0FoL78d1dSIEjZEdN-gvEdWq5NHsjDcDGntpt0VHlxRdBtfGVAIoVnfCM5qk;pt_pin=jd_CxUxTgtCyKEc;",
+  "pt_key=AAJgfk2sADB1_a4eXI1FYUiaMzc8w1Hitbx72u8QsZXk_k7YSMfDBvTaWY48trTxW8TuhZu9K08;pt_pin=18612248185_p;"
 ]
 // 判断环境变量里面是否有京东ck
 if (process.env.JD_COOKIE) {
@@ -22,8 +22,8 @@ if (process.env.JD_COOKIE) {
 if (JSON.stringify(process.env).indexOf('GITHUB')>-1) {
   console.log(`请勿使用github action运行此脚本,无论你是从你自己的私库还是其他哪里拉取的源代码，都会导致我被封号\n`);
   !(async () => {
-    await require('./sendNotify').sendNotify('提醒', `请勿使用github action、滥用github资源会封我仓库以及账号`)
-    await process.exit(0);
+   // await require('./sendNotify').sendNotify('提醒', `请勿使用github action、滥用github资源会封我仓库以及账号`)
+   // await process.exit(0);
   })()
 }
 CookieJDs = [...new Set(CookieJDs.filter(item => item !== "" && item !== null && item !== undefined))]
